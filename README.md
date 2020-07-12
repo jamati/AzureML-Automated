@@ -93,7 +93,7 @@ ___
 
 Click em **"Automated ML (preview)"** e então click no sinal de + conforme imagens abaixo:
 
-![img13](/img/automated01.png)
+![img13](/img/automated01.PNG)
 ___
 
 > 2. Criar seu dataset
