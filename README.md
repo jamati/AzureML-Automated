@@ -125,11 +125,11 @@ ___
 
         ![img17](/img/dataset03.png)
 
-        - Agora click em **'Browser'** e selecione o arquivo que você havia feito upload
+        - Agora click em **'Browser'** e selecione o arquivo que você havia feito upload **'HR_Data.csv'**
 
-        ![img18](/img/dataset03.png)
+        ![img18](/img/dataset04.png)
 
-        ![img19](/img/dataset04.png)
+        ![img19](/img/dataset045.png)
 
         - Click em **'Next'**
 
