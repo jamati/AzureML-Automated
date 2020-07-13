@@ -211,17 +211,76 @@ ___
 - Click em **'Finish'**
 
 ![img29](/img/algoritmo02.png)
-
-
-
-
-
-    
-
-
-
-
 ___
+
+> 6. Vamos verificar os resultados
+
+- Seu experimento está completo entao vamos verificar os resultado
+
+- Como pode ser visto em **'Details'** o algoritmo escolhido foi o **'StackEnsemble'** e obteve uma acurácia de 97%.
+
+![img29](/img/experimento02.png)
+
+ - Click em **'Data guardralls'**
+ 
+    - Aqui você verifica todas as etapas que foram executadas nos dados. Das alterações no esquema de dados a separação dos dados para treinamento e validação tudo pode ser visto aqui.
+    - Se você utilizar o arquivo **'HR_Data.csv'** para seu modelo provavelmente verá um alerta de **'Class balancing detection'**. Isto ocorre porque uma classe tem muito mais dados que a outra o que no nosso caso faz sentido, já que só um pequeno percentual dos funcionários que saíram da empresa
+
+    ![img30](/img/experimento02.png)
+
+ - Click em **'Models'**
+
+    - Aqui você consegue visualizar todos os algoritmos testados com a acurácia, tempo de execução, etc. Você pode verificar também que você rodou o modelo utilizando o **'Run 1'**, mas ele tem vários filhos e cada filho roda de forma independente e tem seu próprio número.
+    - Você pode verificar em qualquer algoritmo para ver mais detalhes, e para ver seus detalhes basta click em **'Explain model'**
+    - No algoritmo com melhor acurária no nosso caso o **'StackEnsemble'** ja está habilitado o **'View explanation'** click nele. Ele irá te redirecionar para o **'Run 56'**
+
+     ![img31](/img/viewexplanation01.png)
+
+    - No **'Explanations'** você consegue verificar quais colunas (features) tiveram o maior impacto no seu modelo.
+
+    ![img32](/img/viewexplanation02.png)
+
+    ![img33](/img/viewexplanation03.png)
+
+    ![img34](/img/viewexplanation04.png)
+
+    - Click me **'Metrics'** para poder visualizar algumas métricas do seu modelo
+
+    ![img35](/img/viewexplanation05.png)
+
+    - Em **Output + logs'** é possível verificar todos os logs de execução e seus outputs.
+
+    ![img36](/img/viewexplanation06.png)
+
+    - Em **'Imagens'** caso seu modelo trabalhe com imagens mostraria aqui
+
+    - Em **'Snapshot'** você consegue visualizar a execução do modelo em código python
+
+- Click em **'Model'** 
+
+![img37](/img/experimento04.png)
+___
+
+> 7. Agora é hora de fazer deploy do nosso modelo
+
+- Agora que estamos satisfeitos com os resultados do nosso experimento vamos fazer o deploy do nosso modelo
+
+- Click em **'Deploy'**
+
+- Em seguida no pop-up **'Deploy a model'** preencha os campos seguindo os parametros abaixo:
+
+    - Digite um nome para seu endpoint. Ex.: hr-automl
+    - Apesar de não ser obrigatório o campo descrição recomendo preencher com informações relevantes.
+    - Em **'Computer type'** selecione **'ACI'**. Por se tratar de uma demonstração faz mais sentido o ACI, mas se seu modelo for ser consumido por toda empresa o **'AKS'** pode trazer um melhor desempenho.
+    - Click em **'Deploy'**
+
+    ![img38](/img/deploy01.png)
+
+    - Agora que o deployment terminou já estamos prontos para consumir nosso modelo
+
+    ![img39](/img/deploy02.png)
+    ___
+
 
 ## Agora vamos consumir nosso modelo no PBI ##
 
@@ -231,38 +290,38 @@ ___
 
 - Instale o Power BI seguindo as opções default. Após a instalação abra o mesmo
 
-![img47](/img/pbi01.png) 
+![img40](/img/pbi001.png) 
 ___ 
 
->  ora vamos importar uma amostra para o Power BI
+> 2. Agora vamos importar uma amostra para o Power BI
 
-- Click no icone **"Excel"**
+- Click no ícone **"Excel"**
 
-![img48](/img/pbi02.png) 
+![img41](/img/pbi02.png) 
 
 - Selecione **"Sheet1"** e depois click em **"Load"**
 
-![img49](/img/pbi03.png)
+![img42](/img/pbi03.png)
 ___ 
 
 > 3. Vamos habilitar as features em preview do Power BI
 
 - Click em **"File"**, depois click em **"Options and settings"** e em seguida **"Options"**
 
-![img50](/img/pbi04.png)
+![img43](/img/pbi04.png)
 
-![img51](/img/pbi05.png)
+![img44](/img/pbi05.png)
 
 - Click em **"Previews features"**, depois click na caixa **"AI Insights function browser"** 
 
-![img52](/img/pbi06.png)
+![img45](/img/pbi06.png)
 ___ 
 
 > 4. Agora vamos consumir nosso modelo
 
-- Click no icone **"Transform data"**, depois click em **"Transform data"** 
+- Click no ícone **"Transform data"**, depois click em **"Transform data"** 
 
-![img53](/img/pbi07.png)
+![img46](/img/pbi07.png)
 
 - Agora no Power Query Editor você conseguirá visualizar os dados da amostra
 
@@ -270,26 +329,30 @@ ___
 
 - Agora você precisa logar com suas credenciais do Azure. Após fazer o login basta clicar em **"Connect"**
 
-![img54](/img/pbi08.png)
+![img47](/img/pbi08.png)
 
-- Agora dentro do Azure Machine Learning Models, você deve selecionar o seu endpoint criado anteriormente
+- Agora dentro do Azure Machine Learning Models, você deve selecionar o seu endpoint criado anteriormente. E nos campos sem dados você deve colocar um exemplo. Neste exemplo no campo **"Num_empresas_trabalhou"** digite um número, no meu caso usei o **'4'**
 
-![img55](/img/pbi11.png)
-
-- Nos campos sem dados você deve colocar um exemplo. Neste caso seria "Sim" no campo **"Saiu_da_empresa"** e no campo **"Num_empresas_trabalhou"** digite um número, no meu caso usei o "4"
-
-![img56](/img/pbi11.png)
-
-![img57](/img/pbi11-p)
+![img48](/img/pbi11.png)
 
 - Em seguida é só clicar em **"OK"**
 
 - Irá aparecer uma mensagem sobre Privacidade. Neste momento click em **"Continue"**
 
-![img57](/img/pbi12.png)
+![img49](/img/pbi12.png)
 
 - Em **"Privacy levels"** marque a opção **"Ignore Privacy Levels checks..."** e click em **"Save"**
 
-![img58](/img/pbi13.png)
+![img50](/img/pbi13.png)
 
-- Em **"Privacy levels"** marque a opção **"Ignore Privacy Levels checks..."** e click em **"Save"**
+- Pronto agora você já conseguiu rodar seu modelo na sua amostra de dados e ter uma previsibilidade.
+
+![img51](/img/pbi15.png)
+
+## Conclusão ##
+
+- O Azure Machine Learning Automated pode ajudar pessoas com poucos conhecimentos de Machine Learning, mas também pode ajudar Cientista de Dados à ganhar scala e agilidade na criação de seus modelos. 
+
+- E no final com pouco trabalho no Power BI podemos ter dados como esses
+
+![img70](/img/pbi16.png)
