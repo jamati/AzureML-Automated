@@ -1,5 +1,5 @@
 # Workshop Azure Machine Learning Automated 
-Este workshop contém instruções sobre como criar seu primeiro experimento utilizando o Azure Machine Learning Designer
+Este workshop contém instruções sobre como criar seu primeiro experimento utilizando o Azure Machine Learning Automated
 
 ## Praparar o ambiente ##
 
@@ -9,7 +9,7 @@ Basta seguir o passo a passo do link abaixo. Obs: Utilize um email para criar su
 Link: https://azure.microsoft.com/pt-br/free/
 ___
    
->  iar um Resource Group
+> 2. Criar um Resource Group
 
 No portal do Azure Portal click em **"Create a resource"** e então digite **Resource Group** . Click em **"Create"** 
 
